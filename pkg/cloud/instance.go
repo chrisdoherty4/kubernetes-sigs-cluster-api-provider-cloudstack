@@ -216,7 +216,6 @@ func (c *client) GetOrCreateVMInstance(
 	affinity *infrav1.CloudStackAffinityGroup,
 	userData string,
 ) error {
-
 	// Check if VM instance already exists.
 	if err := c.ResolveVMInstanceDetails(csMachine); err == nil ||
 		!strings.Contains(strings.ToLower(err.Error()), "no match") {
@@ -372,5 +371,4 @@ func (c *client) listVMInstanceDatadiskVolumeIDs(instanceID string) ([]string, e
 	}
 
 	return ret, nil
-
 }
